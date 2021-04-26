@@ -19,7 +19,7 @@
 
 # Installation (For Streamer)
 * Download the Script.py File from /Client/
-* Install the Requirements using `pip install -r requirements.txt `
+* Install the Dependencies using `pip install pyautogui websockets asyncio`
 
 # How it works
 This Project was written in 30 Minutes. Don't expect anything fancy. When the Presentor clicks on one of the Buttons it will send a Request to the Python Script running on the Streamers PC to press the Arrows Left or Arrow Right button. For this to work you'll need to be active in the Presentation.
