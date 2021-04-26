@@ -25,6 +25,7 @@
 This Project was written in 30 Minutes. Don't expect anything fancy. When the Presentor clicks on one of the Buttons it will send a Request to the Python Script running on the Streamers PC to press the Arrows Left or Arrow Right button. For this to work you'll need to be active in the Presentation.
 
 # Setup Video
+[![PowerPoint Clicker - Installation & Usage](http://img.youtube.com/vi/ONi3Xi8RwzY/0.jpg)](http://www.youtube.com/watch?v=ONi3Xi8RwzY "PowerPoint Clicker - Installation & Usage")
 
 # Screenshots
 
