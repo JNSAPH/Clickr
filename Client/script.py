@@ -14,3 +14,5 @@ async def hello():
                 pyautogui.press("left")
             else:
                 print(greeting)
+
+asyncio.get_event_loop().run_until_complete(hello())
