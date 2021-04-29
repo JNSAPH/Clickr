@@ -36,3 +36,6 @@ This Project was written in 30 Minutes. Don't expect anything fancy. When the Pr
 <h1 align="center">
   <img src="./assets/phone.png" width="300">
 </h1>
+
+# Thanks to
+* [Jojo599k](https://github.com/jojo599k/)
