@@ -1,0 +1,12 @@
+<div class="body">
+    <nb-card class="center" size="small">
+        <nb-card-body>
+            <h1>Join a Session</h1>
+            <input type="text" nbInput placeholder="SessionID" #sessionID>
+            <button nbSuffix nbButton ghost (click)="joinSession(sessionID.value)"><nb-icon [icon]="'arrow-right-outline'"></nb-icon></button>
+
+            <p>Not a Presenter? <a href="https://github.com/JNSAPH/PowerPoint-Clicker">Download</a> the Tool!</p>
+    
+        </nb-card-body>
+      </nb-card>
+</div>

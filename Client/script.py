@@ -1,7 +1,7 @@
 import pyautogui, websockets, asyncio
 
 async def hello():
-    async with websockets.connect('wss://ws-clicker.jnsaph.com/ws') as websocket:
+    async with websockets.connect('wss://clicker.jnsaph.com/ws') as websocket:
         while True:
             greeting = await websocket.recv()
             if greeting == "next":

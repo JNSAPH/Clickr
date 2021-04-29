@@ -1,0 +1,20 @@
+.body{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+nb-card{
+    width: 100%;
+    max-width: 60rem;
+}
+
+nb-card-body{
+    text-align: center;
+    width: 100%;
+}
+
+p{
+    padding-top: 8rem;
+}
