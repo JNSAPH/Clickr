@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from '../../utils.service';
 
@@ -15,8 +15,28 @@ export class ClickRouteComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-
       this.sessionID = params['sessionID'];
+    })
+    
+    this.utils.notifySession(true, this.sessionID)
+    .subscribe((resp) => {
+      console.info(resp)
+    },
+    (error) => {
+      console.error(error)
+    })
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.utils.notifySession(false, this.sessionID)
+    .subscribe((resp) => {
+      alert(resp);
+      console.info(resp)
+    },
+    (error) => {
+      alert(error);
+      console.error(error)
     })
   }
 

@@ -31,15 +31,19 @@ export class UtilsService {
       { status: type, duration: 5000 });
   }
 
+  notifySession(type: boolean, ID: number){
+    return this.http.get(this.URL + "notify/" + type + "/" + ID);
+  }
+
   authenticate(ID: number) {
-    return this.http.get(this.URL + "authenticate/" + ID, {})
+    return this.http.get(this.URL + "authenticate/" + ID, {});
   }
 
   goNext(ID: number) {
-    return this.http.get(this.URL + "next/" + ID, {})
+    return this.http.get(this.URL + "next/" + ID, {});
   }
 
   goBack(ID: number) {
-    return this.http.get(this.URL + "previous/" + ID, {})
+    return this.http.get(this.URL + "previous/" + ID, {});
   }
 }
