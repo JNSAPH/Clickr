@@ -1,3 +1,5 @@
+'use strict';
+
 const WebSocket = require('ws');
 const express = require('express')
 const cors = require('cors')
@@ -7,12 +9,13 @@ const app = express()
 app.use(express.static('public'));
 app.use(cors())
 
-// Initialized Socket Server
+// Initialize Socket Server
 const wss = new WebSocket.Server({port: 1213});
 
+// Initialize Session Array 
 var connections = [];
 
-// On Connection
+// Socket On Connection
 wss.on('connection', function connection(ws) {
     // Keep track of Session
     ws.id = Math.floor(Math.random()*90000) + 10000;
@@ -38,26 +41,21 @@ app.get('/authenticate/:sessionID', (req, res) => {
 })
 
 app.get('/previous/:sessionID', (req, res) => {
-    console.log("Previous Slide");
-
-    // Send Message
     try {
-        connections[req.params.sessionID].send("back")
-        res.status(200).send({ code: 200, message: "Done." })
+        connections[req.params.sessionID].send("back");
+        res.status(200).send({ code: 200, message: "Done." });
     } catch (error) {
-        res.status(400).send({code: 400, message: "Invalid Session ID"})
+        res.status(400).send({code: 400, message: "Invalid Session ID"});
     }
 })
 
 app.get('/next/:sessionID', (req, res) => {
-    // Send Message
     try {
-        connections[req.params.sessionID].send("next")
-        res.status(200).send({ code: 200, message: "Done." })
+        connections[req.params.sessionID].send("next");
+        res.status(200).send({ code: 200, message: "Done." });
     } catch (error) {
-        res.status(400).send({code: 400, message: "Missing sessionID"})
+        res.status(400).send({code: 400, message: "Missing sessionID"});
     }
-
 })
 
 app.listen(port, () => {
