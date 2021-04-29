@@ -1,4 +1,3 @@
-var ip = "51.89.52.49:1212"
 var sessionID;
 
 $('#sessionID').change(() => {
@@ -7,7 +6,7 @@ $('#sessionID').change(() => {
 })
 
 $('#previous').click(() => {
-    $.get("http://" + ip + "/previous/" + sessionID, (data, status) => {
+    $.get("http://ws-clicker.jnsaph.com/previous/" + sessionID, (data, status) => {
         console.log(data, status);
     })
 })
