@@ -35,15 +35,10 @@ wss.on('connection', function connection(ws) {
 
 app.get('/');
 
-app.get('/authenticate/:sessionID', (req, res) => {
-    if (!connections[req.params.sessionID]) return res.status(400).send({code: 400, message: "Session does not exist."});
-    res.status(200).send({code: 200, sessionDetails: connections[req.params.sessionID]});
-})
-
 app.get('/previous/:sessionID', (req, res) => {
     try {
         connections[req.params.sessionID].send("back");
-        res.status(200).send({ code: 200, message: "Done." });
+        res.status(200).send({ code: 200, message: "Ok" });
     } catch (error) {
         res.status(400).send({code: 400, message: "Invalid Session ID"});
     }
@@ -52,7 +47,28 @@ app.get('/previous/:sessionID', (req, res) => {
 app.get('/next/:sessionID', (req, res) => {
     try {
         connections[req.params.sessionID].send("next");
-        res.status(200).send({ code: 200, message: "Done." });
+        res.status(200).send({ code: 200, message: "Ok" });
+    } catch (error) {
+        res.status(400).send({code: 400, message: "Missing sessionID"});
+    }
+})
+
+app.get('/authenticate/:sessionID', (req, res) => {
+    if (!connections[req.params.sessionID]) return res.status(400).send({code: 400, message: "Session does not exist."});
+    res.status(200).send({code: 200, sessionDetails: connections[req.params.sessionID]});
+})
+
+app.get('/notify/:state/:sessionID', (req, res) => {
+    try {
+        console.log(!!req.params.state);
+        if (req.params.state == "true") {
+            // User Joined
+            connections[req.params.sessionID].send("A user has joined your session.");
+        } else {
+            // User Left
+            connections[req.params.sessionID].send("A user has left your session.");
+        }
+        res.status(200).send({ code: 200, message: "Ok" });
     } catch (error) {
         res.status(400).send({code: 400, message: "Missing sessionID"});
     }
