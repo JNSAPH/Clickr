@@ -27,7 +27,7 @@ Go to the [Releases tab](https://github.com/JNSAPH/Clickr/releases) and download
 
 # 🖼️ Screenshots & Videos
 ## Installation Video
-[![PowerPoint Clicker - Installation & Usage](http://img.youtube.com/vi/ONi3Xi8RwzY/0.jpg)](http://www.youtube.com/watch?v=ONi3Xi8RwzY "PowerPoint Clicker - Installation & Usage")
+[![How to Download, Install and Use Clickr](http://img.youtube.com/vi/jR_TD5ZfUzg/0.jpg)](http://www.youtube.com/watch?v=jR_TD5ZfUzg "How to Download, Install and Use Clickr")
 
 ## Images
 <img src="./assets/Screenshots/Website.png">
