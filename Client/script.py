@@ -1,18 +1,22 @@
-import pyautogui, websockets, asyncio
+import pyautogui, asyncio
+from websocket import create_connection
 
-async def hello():
-    async with websockets.connect('wss://clicker.jnsaph.com/ws') as websocket:
-        while True:
-            greeting = await websocket.recv()
-            if greeting == "next":
-                # Next
-                print("next")
-                pyautogui.press("right")
-            elif greeting == "back": 
-                # Previous
-                print("back")
-                pyautogui.press("left")
-            else:
-                print(greeting)
 
-asyncio.get_event_loop().run_until_complete(hello())
+def main():
+    ws = create_connection("wss://clicker.jnsaph.com/ws")
+    while True:
+        greeting = ws.recv()
+        if greeting == "next":
+        # Next
+            print("[CMD] Next Slide")
+            pyautogui.press("right")
+        elif greeting == "back": 
+        # Previous
+            print("[CMD] Previous Slide")
+            pyautogui.press("left")
+        else:
+            print(greeting)
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()

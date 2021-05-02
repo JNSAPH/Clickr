@@ -1,41 +1,48 @@
-<h1 align="center">
-  PowerPoint Clicker
-</h1>
+<p align="center">
+      <img src="assets/Logos/Blob.svg" width="80">
+  <h1 align="center">
+    CLICKR
+  </h1>
+</p>
 
-# Requirements
+<h3 align="center">
+  Present presentations as they were created.
+</h3>
+
+CLICKR enables you to present presentations with your group even more easily. Download the client, share the code and boom! You're up and runing.
+
+# 📥 Download
+Go to the [Releases tab](https://github.com/JNSAPH/Clickr/releases) and download the latest version.
+
+## Usage
+### **Presenter**
+* Go to https://clicker.jnsaph.com
+* Enter the 5-digit session ID and click Next
+* Click Next / Previous Slide to control the presentation
+
+### **Streamer**
+* Download and run the client.
+* Give the session ID to the presenters
+* Make sure your preferred presentation program is always highlighted and can be controlled with the arrow keys
+
+# 🖼️ Screenshots & Videos
+## Installation Video
+[![PowerPoint Clicker - Installation & Usage](http://img.youtube.com/vi/ONi3Xi8RwzY/0.jpg)](http://www.youtube.com/watch?v=ONi3Xi8RwzY "PowerPoint Clicker - Installation & Usage")
+
+## Images
+<img src="./assets/Screenshots/Website.png">
+<img src="./assets/Screenshots/Client.png">
+
+
+# ⚙️ Developing / Building yourself
+## Requirements
 * Python 3 (Recommended: Python 3.9)
 * PIP
 
-# Usage
-## For the Presenter
-* Go to https://hems5.de/Clicker
-* Type in the 5 Digit Session ID and press Enter
-* Click Next / Previous Slide
+## How it works
+After the presentator has pressed one of the two buttons on his device, a webhook request is sent to the client with the session ID via our server. Depending on whether the presentation is to be moved forwards or backwards, the client emulates the push of the corresponding arrow key. 
 
-## For the Streamer
-* Download and run the Python Script in /Client/
-* Give your Presenters the Session ID
-* Click into Powerpoint.
+## Comming Soon™
 
-# Installation (For Streamer)
-* Download the Script.py File from /Client/
-* Install the Dependencies using `pip install pyautogui websockets asyncio`
-
-# How it works
-This Project was written in 30 Minutes. Don't expect anything fancy. When the Presentor clicks on one of the Buttons it will send a Request to the Python Script running on the Streamers PC to press the Arrows Left or Arrow Right button. For this to work you'll need to be active in the Presentation.
-
-# Setup Video
-[![PowerPoint Clicker - Installation & Usage](http://img.youtube.com/vi/ONi3Xi8RwzY/0.jpg)](http://www.youtube.com/watch?v=ONi3Xi8RwzY "PowerPoint Clicker - Installation & Usage")
-
-# Screenshots
-
-<h1 align="center">
-  <img src="./assets/Client.png" width="600">
-</h1>
-
-<h1 align="center">
-  <img src="./assets/phone.png" width="300">
-</h1>
-
-# Thanks to
+# ❤️ Special thanks
 * [Jojo599k](https://github.com/jojo599k/)
