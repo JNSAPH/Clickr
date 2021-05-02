@@ -6,7 +6,7 @@
 </p>
 
 <h3 align="center">
-  Present presentations as they were created.
+  Present presentations the way they were created.
 </h3>
 
 CLICKR enables you to present presentations with your group even more easily. Download the client, share the code and boom! You're up and runing.
